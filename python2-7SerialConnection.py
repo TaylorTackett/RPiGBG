@@ -21,4 +21,4 @@ while characterEntered != 'q':
         serialConnection.write('a')
         
     else if characterEntered == 'd':
-        serialConnection.write('d)
+        serialConnection.write('d')
