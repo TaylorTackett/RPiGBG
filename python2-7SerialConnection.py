@@ -11,14 +11,14 @@ while characterEntered != 'q':
     if characterEntered == 'q':
         break
     
-    else if characterEntered == 'f':
+    elif characterEntered == 'f':
         serialConnection.write('f')
         
-    else if characterEntered == 'b':
+    elif characterEntered == 'b':
         serialConnection.write('b')
         
-    else if characterEntered == 'a':
+    elif characterEntered == 'a':
         serialConnection.write('a')
         
-    else if characterEntered == 'd':
+    elif characterEntered == 'd':
         serialConnection.write('d')
