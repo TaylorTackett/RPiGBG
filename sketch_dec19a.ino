@@ -1,6 +1,6 @@
-int pwmMotor1 = 5;
+ int pwmMotor1 = 5;
 int pinOneMotor1 = 7;
-int pinTwoMotor2 = 6;
+int pinTwoMotor1 = 6;
 
 int pwmMotor2 = 10; 
 int pinOneMotor2 = 9;
@@ -26,7 +26,7 @@ void forward(){
   analogWrite(pwmMotor1, 255);
  
   digitalWrite(pinOneMotor2, HIGH);
-  digitalWrite(pintTwoMotor2, LOW);
+  digitalWrite(pinTwoMotor2, LOW);
   analogWrite(pwmMotor2, 255);
   
   delay(6000);//run for six seconds 
@@ -37,7 +37,7 @@ void forward(){
   analogWrite(pwmMotor1, 100);
  
   digitalWrite(pinOneMotor2, HIGH);
-  digitalWrite(pintTwoMotor2, LOW);
+  digitalWrite(pinTwoMotor2, LOW);
   analogWrite(pwmMotor2, 100);
   
   delay(6000);//run for six secodns 
@@ -124,29 +124,30 @@ void gradualDeclerationFromMaxSpeed(){
 }
 
 void loop(){
+  //forward();
   if(Serial.available()){
     switch(Serial.read()){
       //forward movement case 
       case 'f':
         forward();
-        delay(14000); //give enough time to run
+        delay(1000); //give enough time to run
         break;
         
       //backward movement case
       case 'b':
         backward();
-        delay(14000); //give enough time to run 
+        delay(1000); //give enough time to run 
         break;
       
       //acceleration case
       case 'a':
         gradualAccelerationMaxSpeed();
-        delay(14000); //give enough time to run  
+        delay(1000); //give enough time to run  
         break;
       
       case 'd':
-        gradualAccelerationMaxSpeed()
-        delay(14000); //give enough time to run 
+        gradualAccelerationMaxSpeed();
+        delay(1000); //give enough time to run 
         break; 
       
       //default case
